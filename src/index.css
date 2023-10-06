@@ -32,7 +32,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin: 0; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  color:crimson;
 }
 
 /* Estilos para botones */
@@ -43,7 +47,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: crimson;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -55,7 +59,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Estilos para la barra de navegación */
+/*  barra de navegación */
 .navbar {
   position: fixed;
   top: 0;
@@ -63,10 +67,22 @@ button:focus-visible {
   height: 100px;
   background-color: crimson;
   color: beige;
-  z-index: 1000; /* Asegura que la barra esté en el frente */
+  z-index: 1000;
   display: flex;
-  align-items: center; /* Alinea verticalmente */
+  /* justify-content: space-between; */
+  align-items: center;
   padding: 0 20px;
+}
+
+
+
+
+ 
+
+.logo {
+  height: 90px;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  margin-left: 20px;
 }
 
 .nav {
@@ -74,48 +90,37 @@ button:focus-visible {
   margin: 0;
   padding: 0;
   display: flex;
-  align-items: center;
+  align-items: center; 
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav li:last-child {
+  margin-right: 0;
 }
 
 .nav a {
   padding: 10px;
   text-decoration: none;
-  color:black;
-  margin-right: 20px;
-}
-
-
-.nav a:last-child {
-  margin-right: 0; /* Elimina el margen derecho del último enlace */
+  color: black;
+  align-items: center
 }
 
 .nav a:hover {
   color: white;
 }
-
-/* .logo {
-  width: 100px; /* Ajusta el ancho según tu logo */
-  /* Mantiene la proporción del logo */
-  /* margin-left: 20px; /* Agrega margen izquierdo */
-   /* Alinea verticalmente con la altura de la barra de navegación */
- 
-
-.logo {
-  height: 90px; /* Ajusta la altura del logo */
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%); /* Forma personalizada */
-  margin-left: 20px;
-  
-}
-/* Estilos para el contenido de los componentes */
+/*  componente */
 .cart-widget {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
-  right: 0; /* Cambiado a margen derecho */
-  background-color: crimson;
-  color: white; /* Texto en blanco */
-  padding: 20px; /* Espaciado interno */
+  right: 0; 
+  /* background-color: crimson; */
+  color: white; 
+  padding: 50px; 
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   z-index: 1000;
 }
 
@@ -124,13 +129,113 @@ button:focus-visible {
 }
 
 .item-list-container {
-  /* ...otros estilos ... */
+
   margin: 100px auto; 
   margin-left: 20px;
-  /* margin: 5rem auto;Centrar horizontalmente y verticalmente */
-  background-color: white; /* Color negro */
-  color: black; /* Texto en blanco */
-  padding: 10px; /* Espaciado interno */
-  text-align: center; /* Centrar el contenido */
+  margin: 5rem auto;
+  background-color: white; 
+  color: black; 
+  padding: 10px; 
+  text-align: center; 
 }
-/* Agrega más estilos específicos para tus componentes si es necesario */
+
+
+
+/*  tarjetas de productos */
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 0px #ccc;
+  transition: transform 0.2s ease-in-out;
+  width: 300px; 
+  height: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+} 
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+ .product-image {
+  object-fit: contain;
+  width: 100%; 
+  height: 50%;
+  object-fit: cover; 
+  max-height: 60%; 
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.card-text {
+  color: #777;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/*detail*/
+/* Estilos para el contenedor principal */
+.item-detail-container {
+  display: flex; /* Establece un diseño flexible para alinear elementos en fila */
+  justify-content: space-between; /* Espacio entre los elementos izquierdo y derecho */
+  padding: 20px; /* Espaciado interior */
+}
+
+/* Estilos para la tarjeta izquierda (imagen) */
+.left .card {
+  width: 50%; /* Ancho de la tarjeta izquierda */
+  border: 1px solid #ccc; /* Borde para la tarjeta */
+  padding: 10px; /* Espaciado interior */
+}
+
+.product-image {
+  max-width: 100%; /* Asegura que la imagen no se salga de la tarjeta */
+}
+
+/* Estilos para la tarjeta derecha (datos) */
+.right .card {
+  width: 60%; /* Ancho de la tarjeta derecha */
+  border: 2px solid #ccc; /* Borde para la tarjeta */
+  padding: 10px; /* Espaciado interior */
+}
+
+.right h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  margin-top: 0; /* Elimina el margen superior predeterminado */
+}
+
+.right p {
+  margin: px 0; /* Espaciado vertical para los párrafos */
+}
+
+/* Estilos para el componente ItemCount en la tarjeta derecha */
+.count-container {
+  margin-top: 20px; /* Espaciado superior para el componente ItemCount */
+}
+
+.input-smaller {
+  width: 40px; /* Puedes ajustar este valor según tus preferencias */
+  font-size: 14px; /* Puedes ajustar el tamaño de fuente según tus preferencias */
+}
+/* Estilos adicionales según sea necesario */

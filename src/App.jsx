@@ -1,21 +1,24 @@
-import React from 'react';
-import Navbar from './Components/Navbar/navbar';
-import CartWidget from './Components/Navbar/CartWidget';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./pages/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-    <div>
-      <Navbar />
-      <CartWidget />
-      <ItemListContainer greeting="¡Bienvenido a Sushi en Casa!" />
-     
-    </div>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/menu/:menuid" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+        </Routes>
+      </div>
     </>
   );
 }
 
 export default App;
+
 
