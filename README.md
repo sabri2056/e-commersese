@@ -2,16 +2,20 @@
 
 
 ## Descripcion
-Proyecto final del curso de react, un ecommerce con conexión de firebase del cual vienen los productos con sus determinadas propiedades y a su vez al momento de realizar la compra se genera una orden y se actualiza el stock de estos productos.
+Este proyecto final es el resultado de un curso de React y consiste en un sitio de comercio electrónico con conexión a Firebase. Los productos se obtienen de Firebase, y al realizar una compra, se genera una orden y se actualiza el stock de los productos correspondientes.
 
 
 ## Como levantar el proyecto
-Para levantar el proyecto se deben ejecutar los siguientes comandos:
+Para ejecutar este proyecto en tu entorno local, sigue los siguientes pasos:
 
+- git clone [URL del repositorio]
+- cd [nombre del directorio]
+
+Instala las dependencias.
 - npm install
 - npm start
 
-Para el correcto funcionamiento, deberemos tener seteadas las variables de entorno en el archivo .env. Estas variables son:
+Asegúrate de configurar correctamente las variables de entorno en el archivo .env con los siguientes valores:
 
 * apiKey:  VITE_FIRESTORE_API_KEY,
 * authDomain:  VITE_FIRESTORE_AUTH_DOMAIN,
@@ -21,40 +25,39 @@ Para el correcto funcionamiento, deberemos tener seteadas las variables de entor
 * appId:  VITE_FIRESTORE_APP_ID,
 * measurementId:  VITE_FIRESTORE_MEASUREMENT_ID,
 
-## FOTO O VIDEO DEMO
 
 ## Componentes
 ### Nabvar
 
-El navbar muestra el logo de la tienda y los links a las distintas secciones del sitio. Además muestra el componente CartWidget. Al hacer click en el logo nos redirigirá (si nos encontramos en otra seccion) al inicio.
+El componente Navbar muestra el logotipo de la tienda y enlaces a diferentes secciones del sitio. También incluye el componente CartWidget. Al hacer clic en el logotipo, se redirigirá al inicio si no estamos allí.
 
 ### CartWidget
 
-Este componente nos muestra el ícono de un carrito en la parte superior derecha, el cual en el caso de tener productos agregados al carrito, nos mostrara un numero con la cantidad de productos totales agregados. También al hacer clic sobre el, nos redirigirá al Cart
+Este componente muestra un ícono de carrito en la parte superior derecha cuando hay productos en el carrito, junto con un contador que indica la cantidad total de productos agregados. Al hacer clic en él, se redirigirá al carrito.
 
 ### Cart
 
-El cart nos mostrara los productos agregados al carrito en forma de otro componente CartItem. Debajo del ultimo producto, nos mostrara el total de los productos y sus cantidades seguido de un botón para vaciar el carrito y otro para proceder al Checkout. En caso de que no haya ningún producto agregado al carrito nos mostrara un mensaje indicándolo seguido de un botón para regresar al inicio.
+El componente Cart muestra los productos agregados al carrito en forma de elementos individuales (CartItem). Debajo de la lista de productos, se muestra el total de productos y sus cantidades, seguido de un botón para vaciar el carrito y otro para proceder al proceso de pago. Si no hay productos en el carrito, se muestra un mensaje indicándolo, junto con un botón para volver al catálogo.
 
 ### Item
 
-Este componente nos muestra imagen, nombre, precio y cantidad por cada uno de los productos agregados al carrito. Además tiene un boton para remover ese producto del carrito.
+Este componente muestra la imagen, nombre, precio y cantidad de cada producto agregado al carrito. También incluye un botón para eliminar un producto del carrito.
 
 ### Checkout
 
-En este componente encontramos de manera mas ordenada los productos del carrito seguidos de un formulario y un botón para finalizar la compra, luego de rellenar los campos nombre, teléfono y email, podremos pulsar en en dicho botón para que nos genere una orden con los datos del formulario y los productos del carrito. También nos reducirá el stock de los correspondientes productos, y por ultimo nos renderizara el id de la orden generada.
+El componente Checkout muestra de manera organizada los productos en el carrito, seguidos de un formulario para completar con nombre, teléfono y correo electrónico. Luego, un botón permite finalizar la compra. Una vez completados los campos del formulario y se hace clic en el botón, se genera una orden con los datos del formulario y los productos del carrito. Por último, se muestra el ID de la orden generada.
 
 ### ItemList e ItemListContainer 
 
-Componentes que se encargan de renderizar la lista de productos (imagen, nombre y precio) dependiendo en que categoría nos encontremos. Si pulsamos en cualquiera de estos productos nos redirigira a ItemDetail.
+Estos son componentes que se encargan de mostrar la lista de productos, incluyendo imagen, nombre y precio. Los productos se muestran según la categoría seleccionada. Si se hace clic en uno de los productos, se redirige al detalle del producto (ItemDetail).
 
 ### ItemDetail e ItemDetailContainer 
 
-Estos componentes nos renderizan el producto que hayamos seleccionado en ItemList. Mostrándonos: nombre, descripción, stock (la cantidad o "sin stock" en caso que sea 0), precio y también el componente ItemCount, Si hiciéramos click en agregar al carrito se renderizara un nuevo botón que nos redirigirá al carrito.
+Estos componentes muestran detalles del producto seleccionado desde ItemList, incluyendo nombre, descripción, disponibilidad de stock (cantidad o "sin stock" si es igual a 0), precio y el componente ItemCount. Al hacer clic en "Agregar al carrito", se muestra un nuevo botón que redirige al carrito.
 
 ### ItemCount
 
-Este componente nos mostrara un contador con un botón para reducir la cantidad y otro para aumentarla y además el botón para agregar al carrito, este componente se desmontara cuando pulsemos en agregar al carrito. Si el producto en el que nos encontramos no cuenta con stock, el botón de agregar al carrito tendrá la propiedad disabled
+Este componente de contexto contiene los productos agregados al carrito y una serie de funcionalidades relacionadas con el carrito.
 
 ### CartContext
 Es el componente de contexto, contiene los productos que agreguemos al cart y una serie de funcionalidades relacionadas
