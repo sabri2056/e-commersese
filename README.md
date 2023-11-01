@@ -13,7 +13,7 @@ Para ejecutar este proyecto en tu entorno local, sigue los siguientes pasos:
 
 Instala las dependencias.
 - npm install
-- npm start
+- npm run dev
 
 Asegúrate de configurar correctamente las variables de entorno en el archivo .env con los siguientes valores:
 
