@@ -1,4 +1,5 @@
 /* Reset de estilos y configuración global */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,230 +13,153 @@
   box-sizing: border-box;
 }
 
-/* Estilos generales para enlaces */
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: none;
-}
-a:hover {
-  color: #535bf2;
-}
-
-/* Estilos generales para el cuerpo del documento */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos para encabezados */
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  margin: 0; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  color:crimson;
-}
-
-/* Estilos para botones */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: crimson;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/*  barra de navegación */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100px;
-  background-color: crimson;
-  color: beige;
-  z-index: 1000;
+.item-detail-container {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  padding: 0 20px;
+  justify-content: center;
+  gap: 20px;
 }
 
 
-
-
- 
-
-.logo {
-  height: 90px;
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  margin-left: 20px;
-}
-
-.nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center; 
-}
-
-.nav li {
-  margin-right: 20px;
-}
-
-.nav li:last-child {
-  margin-right: 0;
-}
-
-.nav a {
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-  align-items: center
-}
-
-.nav a:hover {
-  color: white;
-}
-/*  componente */
-.cart-widget {
-  /* position: absolute; */
-  top: 0;
-  right: 0; 
-  /* background-color: crimson; */
-  color: white; 
-  padding: 50px; 
-  display: flex;
-  /* align-items: center; */
-  z-index: 1000;
-}
-
-.cart-widget:hover {
-  color: black;
-}
-
-.item-list-container {
-
-  margin: 100px auto; 
-  margin-left: 20px;
-  margin: 5rem auto;
-  background-color: white; 
-  color: black; 
-  padding: 10px; 
-  text-align: center; 
-}
-
-
-
-/*  tarjetas de productos */
 .card {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0px 0px 5px 0px #ccc;
-  transition: transform 0.2s ease-in-out;
-  width: 300px; 
-  height: 400px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border: none; 
   text-align: center;
-  overflow: hidden;
-} 
-
-.card:hover {
-  transform: scale(1.05);
-}
-
- .product-image {
-  object-fit: contain;
-  width: 100%; 
-  height: 50%;
-  object-fit: cover; 
-  max-height: 60%; 
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
 }
 
 .card-body {
-  padding: 1rem;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  margin: 0;
-}
-
-.card-text {
-  color: #777;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border: none;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-/*detail*/
-/* Estilos para el contenedor principal */
-.item-detail-container {
-  display: flex; /* Establece un diseño flexible para alinear elementos en fila */
-  justify-content: space-between; /* Espacio entre los elementos izquierdo y derecho */
-  padding: 20px; /* Espaciado interior */
-}
-
-/* Estilos para la tarjeta izquierda (imagen) */
-.left .card {
-  width: 50%; /* Ancho de la tarjeta izquierda */
-  border: 1px solid #ccc; /* Borde para la tarjeta */
-  padding: 10px; /* Espaciado interior */
+  text-align: center;
 }
 
 .product-image {
-  max-width: 100%; /* Asegura que la imagen no se salga de la tarjeta */
+  max-width: 100%; 
 }
 
-/* Estilos para la tarjeta derecha (datos) */
-.right .card {
-  width: 60%; /* Ancho de la tarjeta derecha */
-  border: 2px solid #ccc; /* Borde para la tarjeta */
-  padding: 10px; /* Espaciado interior */
-}
-
-.right h2 {
-  font-size: 1.5rem; /* Tamaño de fuente para el título */
-  margin-top: 0; /* Elimina el margen superior predeterminado */
-}
-
-.right p {
-  margin: px 0; /* Espaciado vertical para los párrafos */
-}
-
-/* Estilos para el componente ItemCount en la tarjeta derecha */
 .count-container {
-  margin-top: 20px; /* Espaciado superior para el componente ItemCount */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
+button {
+  border: none; 
+  color: crimson; 
+  color: #fff; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
+
+.item-detail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  border: none; 
+  text-align: center;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.product-image {
+  max-width: 100%;
+}
+
+.count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  border: none; 
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
+.count-input {
+
+border: none; 
+text-align: center; 
+font-size: 18px; 
+width: 50px; 
+}
+
+button.increment, button.decrement {
+  border: none;
+}
+
+
+.add-to-cart-button {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+
+.counter-display {
+  font-size: 18px;
+}
+
+.count-input {
+  border: none; 
+  text-align: center; 
+  font-size: 18px; 
+  width: 50px; 
+}
+
+
+.button-smaller {
+  border: none; 
+  background-color: crimson; 
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px; 
+}
+
+
+.button-add {
+  border: none; 
+  background-color: crimson; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
 
 .input-smaller {
-  width: 40px; /* Puedes ajustar este valor según tus preferencias */
-  font-size: 14px; /* Puedes ajustar el tamaño de fuente según tus preferencias */
+  border: none; 
+  border-radius: none;
+  text-align: center; 
+  font-size: 18px; 
+  width: 50px; 
 }
-/* Estilos adicionales según sea necesario */
+
+
+.cart-widget {
+  display: flex;
+  align-items: center;
+  
+  
+}
+
+.small-text {
+  font-size: 17px; 
+}
+
+.small-card-body {
+  font-size: 14px; 
+}

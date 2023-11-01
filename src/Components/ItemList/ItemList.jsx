@@ -5,9 +5,9 @@ function ItemList({ items }) {
 
   return (
     <div className="item-list-container">
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-3 g-4">
         {items.map((item) => (  
-          <div className="col-md-4 mb-4" key={item.id}>
+          <div className="col" key={item.id}>
             <Item item={item} />
           </div>
         ))}
@@ -17,3 +17,4 @@ function ItemList({ items }) {
 }
 
 export default ItemList;
+

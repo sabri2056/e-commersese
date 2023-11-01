@@ -1,7 +1,5 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-
 
 function Item({ item }) {
   return (
@@ -11,7 +9,7 @@ function Item({ item }) {
         <img className="product-image" src={item?.imageUrl} alt="img del producto" />
       </div>
       <Link to={'/item/' + item?.id}>  
-      <button>Ver Detalle</button>
+      <button className="button-smaller">Ver Detalle</button>
       </Link>
       <div className="right">
       

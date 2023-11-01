@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function ItemCount({ stock, initial, onAdd }) {
-  const [count, setCount] = useState(initial);
+
+function ItemCount({ stock, onAdd }) {
+  const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
     if (count < stock) {
@@ -17,18 +18,24 @@ function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <div className="item-count">
-      <button onClick={handleDecrement}>-</button>
+  {stock > 0 ? (
+    <>
+      <button className="button-smaller" onClick={handleDecrement}>-</button>
+      <button className="button-smaller" onClick={handleIncrement}>+</button>
       <input
         type="number"
         className="input-smaller"
         value={count}
         readOnly
       />
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={() => onAdd(count)}>Agregar al carrito</button>
-    </div>
+      <button className="button-add" onClick={() => onAdd(count)}>Agregar al carrito</button>
+    </>
+  ) : (
+    <p>Actualmente no posee stock disponible</p>
+  )}
+</div>
+
   );
 }
 
 export default ItemCount;
-
