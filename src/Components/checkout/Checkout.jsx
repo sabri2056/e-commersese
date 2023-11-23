@@ -16,6 +16,7 @@ const Checkout = () => {
   const [showForm, setShowForm] = useState(true);
   const [load, setLoad] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [telError, setTelError] = useState("");
 
   const { Nombre, Email, Telefono } = buyer;
 
@@ -28,10 +29,14 @@ const Checkout = () => {
   };
 
   const validateForm = () => {
-    if (Nombre && Email && Telefono) {
+    const isValidTel = /^[0-9]+$/.test(Telefono) && Telefono.length > 8;
+  
+    if (isValidTel) {
       setIsFormValid(true);
+      setTelError(""); // Limpiar el mensaje de error si el teléfono es válido
     } else {
       setIsFormValid(false);
+      setTelError("El teléfono debe tener más de 11 dígitos.");
     }
   };
 
@@ -114,12 +119,13 @@ const Checkout = () => {
                 />
 
                 <input
-                  type="number"
+                  type="text"
                   name="Telefono"
                   placeholder="Telefono"
                   value={Telefono}
                   onChange={handleInputChange}
                 />
+                {telError && <p style={{ color: 'red' }}>{telError}</p>}
 
                 <input
                   type="text"
